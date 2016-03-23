@@ -1,12 +1,12 @@
+//Come, join us as we dance madly round the lip of the volcano.
 import java.util.Scanner;
 import java.util.Vector;
-
 
 public class WarframeProject {
 	public static void main(String[] args) {
 		//instantiate variables and stuff
 		Scanner scan = new Scanner(System.in);
-		Vector<Frame> frames = new Vector<Frame>();
+		Vector<Frame> frames = new Vector<Frame>(); //Create the vector! Remember the scope!
 		int choice = 0; //choice set to 0 so loop will start
 		
 		//create a menu.
@@ -24,7 +24,7 @@ public class WarframeProject {
 				System.out.println("Please re-read the menu options and select an appropriate value.");
 			}			
 			if(choice == 1) {
-				System.out.println("Please Enter the Warframe name, and it's type:");
+				System.out.println("Please Enter the Warframe name & type. (Note: Use _ in place of spaces in a name)");
 				Frame newFrame = new Frame(scan.next(), scan.next());
 				frames.add(newFrame); //put the frame in the Vector
 				System.out.println(newFrame.showInfo()); //Show us your goodies, newFrame!

@@ -1,4 +1,4 @@
-
+//Come, join us as we dance madly round the lip of the volcano.
 public class Frame {
 
 		private String name;
@@ -15,8 +15,8 @@ public class Frame {
 		}
 
 		public String showInfo() {
-			// System.out.println(id + ": " + name + " " + type); //This is a
-			// inefficient way to do this.
+			// System.out.println(id + ": " + name + " " + type); 
+			//This is an inefficient way to do this. Commenting it out.
 
 			StringBuilder sb = new StringBuilder();
 			sb.append(id).append(": ").append(name).append(" - ").append(type);
