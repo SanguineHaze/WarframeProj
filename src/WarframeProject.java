@@ -1,35 +1,12 @@
 import java.util.Scanner;
 import java.util.Vector;
 
-class Frames {
-	protected String name;
-	protected String type;
-
-	private static int count = 0;
-	private int id;
-
-	public Frames(String name, String type) {
-		id = count;
-		count++;
-		this.name = name;
-		this.type = type;
-	}
-
-	public String showInfo() {
-		// System.out.println(id + ": " + name + " " + type); //This is a
-		// inefficient way to do this.
-
-		StringBuilder sb = new StringBuilder();
-		sb.append(id).append(": ").append(name).append(" - ").append(type);
-		return sb.toString();
-	}
-
-}
 
 public class WarframeProject {
 	public static void main(String[] args) {
 		//instantiate variables and stuff
 		Scanner scan = new Scanner(System.in);
+		Vector<Frame> frames = new Vector<Frame>();
 		int choice = 0; //choice set to 0 so loop will start
 		
 		//create a menu.
@@ -48,9 +25,8 @@ public class WarframeProject {
 			}			
 			if(choice == 1) {
 				System.out.println("This is where we will end up adding warframe information!");
-				Vector<Frames> frames = new Vector<Frames>();
-				frames.addElement(new Frames(scan.next(), scan.next()));
-				System.out.println();
+				frames.add(new Frame(scan.next(), scan.next()));
+				System.out.println(showInfo()); //WHY WONT YOU FUCKING WORK YOU PIECE OF SHIT.
 			}			
 			if(choice == 2) {
 				System.out.println("Showing warframe information."); 
