@@ -24,9 +24,10 @@ public class WarframeProject {
 				System.out.println("Please re-read the menu options and select an appropriate value.");
 			}			
 			if(choice == 1) {
-				System.out.println("This is where we will end up adding warframe information!");
-				frames.add(new Frame(scan.next(), scan.next()));
-				System.out.println(showInfo()); //WHY WONT YOU FUCKING WORK YOU PIECE OF SHIT.
+				System.out.println("Please Enter the Warframe name, and it's type:");
+				Frame newFrame = new Frame(scan.next(), scan.next());
+				frames.add(newFrame); //put the frame in the Vector
+				System.out.println(newFrame.showInfo()); //Show us your goodies, newFrame!
 			}			
 			if(choice == 2) {
 				System.out.println("Showing warframe information."); 
