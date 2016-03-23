@@ -7,6 +7,7 @@ public class WarframeProject {
 		//instantiate variables and stuff
 		Scanner scan = new Scanner(System.in);
 		Vector<Frame> frames = new Vector<Frame>(); //Create the vector! Remember the scope!
+		int totalElements = frames.size();
 		int choice = 0; //choice set to 0 so loop will start
 		
 		//create a menu.
@@ -31,6 +32,9 @@ public class WarframeProject {
 			}			
 			if(choice == 2) {
 				System.out.println("Showing warframe information."); 
+				for(int index=0; index<totalElements; index++){
+					System.out.println(frames.get(0));
+				}
 			}
 			if(choice == 3){
 				System.out.println("Remove warframe");
