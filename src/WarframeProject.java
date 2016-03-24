@@ -7,7 +7,7 @@ public class WarframeProject {
 		//instantiate variables and stuff
 		Scanner scan = new Scanner(System.in);
 		Vector<Frame> frames = new Vector<Frame>(); //Create the vector! Remember the scope!
-		int totalElements = frames.size();
+		//int totalElements = frames.size();
 		int choice = 0; //choice set to 0 so loop will start
 		
 		//create a menu.
@@ -27,13 +27,15 @@ public class WarframeProject {
 			if(choice == 1) {
 				System.out.println("Please Enter the Warframe name & type. (Note: Use _ in place of spaces in a name)");
 				Frame newFrame = new Frame(scan.next(), scan.next());
-				frames.add(newFrame); //put the frame in the Vector
+				frames.addElement(newFrame); //put the frame in the Vector
 				System.out.println(newFrame.showInfo()); //Show us your goodies, newFrame!
 			}			
 			if(choice == 2) {
+				int totalElements = frames.size(); // checking to see if it's actually adding to the vector.
+				System.out.println("Index size: " + frames.size()); //confirms we're getting somewhere.
 				System.out.println("Showing warframe information."); 
 				for(int index=0; index<totalElements; index++){
-					System.out.println(frames.get(0));
+					System.out.println(frames.get(index)); //well played, mr. bond.... You win for now.
 				}
 			}
 			if(choice == 3){
