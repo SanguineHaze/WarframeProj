@@ -1,4 +1,4 @@
-//Come, join us as we dance madly round the lip of the volcano.
+
 public class Frame {
 
 		private String name;

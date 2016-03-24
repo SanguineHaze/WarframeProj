@@ -1,4 +1,4 @@
-//Come, join us as we dance madly round the lip of the volcano.
+
 import java.util.Scanner;
 import java.util.Vector;
 
