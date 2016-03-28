@@ -33,13 +33,24 @@ public class WarframeProject {
 			if(choice == 2) {
 				int totalElements = frames.size(); // checking to see if it's actually adding to the vector.
 				System.out.println("Index size: " + frames.size()); //confirms we're getting somewhere.
-				System.out.println("Showing warframe information."); 
+				System.out.println("Showing warframe information:"); 
 				for(int index=0; index<totalElements; index++){
-					System.out.println(frames.get(index)); //well played, mr. bond.... You win for now.
+					System.out.println(frames.get(index).showInfo()); //Show dat info!
 				}
+				System.out.println("");
 			}
 			if(choice == 3){
-				System.out.println("Remove warframe");
+				System.out.println("Remove Warframe");
+				System.out.println("Refer to Warframe Info to confirm ID");
+				System.out.println("Please enter warframe ID you wish to remove:");
+				frames.remove(scan.nextInt());
+				System.out.println("Results:");
+				int totalElements = frames.size();
+				for(int index=0; index<totalElements; index++){
+					System.out.println(frames.get(index).showInfo()); //Show dat info!
+				}
+				System.out.println("");
+				
 			}
 			if(choice == 4){
 				System.out.println("Operation complete. Goodbye.");
