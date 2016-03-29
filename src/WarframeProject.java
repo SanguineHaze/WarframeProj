@@ -4,11 +4,11 @@ import java.util.Vector;
 
 public class WarframeProject {
 	
-	static boolean isValidNumber(String rID) {
+	static boolean isValidNumber(String sID) {
 		//return true if characters are digits
         Boolean output = false;
         try{
-            Integer.parseInt(rID);
+            Integer.parseInt(sID);
             output = true;
         }
         catch(Exception ex){
@@ -57,8 +57,14 @@ public class WarframeProject {
 				System.out.println("Remove Warframe");
 				System.out.println("Refer to Warframe Info to confirm ID");
 				System.out.println("Please enter warframe ID you wish to remove:");
-				int rID = scan.nextInt();
-				frames.remove(rID); //I need to check for exceptions. Make sure people can't pull a Lunar and put a string into an int field.
+				int sID = scan.nextInt();
+					for(String sID : rID){ // totally 100% stuck. GRR.
+						if(isValidNumber(sID)){
+							int rID = Integer.parseInt(sID);
+							
+						}
+					}
+				//I need to check for exceptions. Make sure people can't pull a Lunar and put a string into an int field.
 				
 				System.out.println("Results:");
 				int totalElements = frames.size();
