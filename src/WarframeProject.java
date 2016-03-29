@@ -3,13 +3,27 @@ import java.util.Scanner;
 import java.util.Vector;
 
 public class WarframeProject {
+	
+	static boolean isValidNumber(String rID) {
+		//return true if characters are digits
+        Boolean output = false;
+        try{
+            Integer.parseInt(rID);
+            output = true;
+        }
+        catch(Exception ex){
+            output = false;
+        }
+        return output;
+	}
+	
 	public static void main(String[] args) {
 		//instantiate variables and stuff
 		Scanner scan = new Scanner(System.in);
 		Vector<Frame> frames = new Vector<Frame>(); //Create the vector! Remember the scope!
-		//int totalElements = frames.size();
-		int choice = 0; //choice set to 0 so loop will start
 		
+		int choice = 0; //choice set to 0 so loop will start
+				
 		//create a menu.
 		while(choice != 4){
 			System.out.println("Enter choice and press \"ENTER\"\n"+
@@ -43,13 +57,15 @@ public class WarframeProject {
 				System.out.println("Remove Warframe");
 				System.out.println("Refer to Warframe Info to confirm ID");
 				System.out.println("Please enter warframe ID you wish to remove:");
-				frames.remove(scan.nextInt());
+				int rID = scan.nextInt();
+				frames.remove(rID); //I need to check for exceptions. Make sure people can't pull a Lunar and put a string into an int field.
+				
 				System.out.println("Results:");
 				int totalElements = frames.size();
 				for(int index=0; index<totalElements; index++){
 					System.out.println(frames.get(index).showInfo()); //Show dat info!
 				}
-				System.out.println("");
+				System.out.println("");//linebreak! Makes for nicer formatting in the console.
 				
 			}
 			if(choice == 4){
