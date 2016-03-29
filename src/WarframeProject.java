@@ -4,11 +4,11 @@ import java.util.Vector;
 
 public class WarframeProject {
 	
-	static boolean isValidNumber(String sID) {
+	static boolean isValidNumber(String val) {
 		//return true if characters are digits
         Boolean output = false;
         try{
-            Integer.parseInt(sID);
+            Integer.parseInt(val);
             output = true;
         }
         catch(Exception ex){
@@ -32,15 +32,16 @@ public class WarframeProject {
 					"3: Remove Warframe\n"+
 					"4: Exit");
 			//Get Choice!
-			choice = scan.nextInt();
-			
+			choice = scan.nextInt(); 
 			//Processing choice selection
 			if(choice < 1 || choice > 4){
 				System.out.println("Please re-read the menu options and select an appropriate value.");
 			}			
 			if(choice == 1) {
 				System.out.println("Please Enter the Warframe name & type. (Note: Use _ in place of spaces in a name)");
-				Frame newFrame = new Frame(scan.next(), scan.next());
+				String name = scan.next();
+				String type = scan.next();
+				Frame newFrame = new Frame(name, type);
 				frames.addElement(newFrame); //put the frame in the Vector
 				System.out.println(newFrame.showInfo()); //Show us your goodies, newFrame!
 			}			
@@ -57,21 +58,24 @@ public class WarframeProject {
 				System.out.println("Remove Warframe");
 				System.out.println("Refer to Warframe Info to confirm ID");
 				System.out.println("Please enter warframe ID you wish to remove:");
-				int sID = scan.nextInt();
-					for(String sID : rID){ // totally 100% stuck. GRR.
-						if(isValidNumber(sID)){
-							int rID = Integer.parseInt(sID);
-							
-						}
+				String val = scan.next();
+				if(isValidNumber(val)){
+					int valInt = Integer.parseInt(val);	
+					frames.remove(valInt);
+					System.out.println("Results:");
+					int totalElements = frames.size();
+					for(int index=0; index<totalElements; index++){
+						System.out.println(frames.get(index).showInfo()); //Show dat info!
 					}
+					System.out.println("");//linebreak! Makes for nicer formatting in the console.
+				}
+				else {
+					System.out.println("Not a valid number.");
+				}
+					
 				//I need to check for exceptions. Make sure people can't pull a Lunar and put a string into an int field.
 				
-				System.out.println("Results:");
-				int totalElements = frames.size();
-				for(int index=0; index<totalElements; index++){
-					System.out.println(frames.get(index).showInfo()); //Show dat info!
-				}
-				System.out.println("");//linebreak! Makes for nicer formatting in the console.
+				
 				
 			}
 			if(choice == 4){
