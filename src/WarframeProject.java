@@ -84,9 +84,8 @@ public class WarframeProject {
 						System.out.println("Results:");
 						int totalElements = frames.size();
 						for (int index = 0; index < totalElements; index++) {
-							System.out.println(frames.get(index).showInfo()); // Show
-																				// dat
-																				// info!
+							System.out.println(frames.get(index).showInfo()); // Show dat info!
+																				
 						}
 						System.out.println("");// linebreak! Makes for nicer
 												// formatting in the console.
