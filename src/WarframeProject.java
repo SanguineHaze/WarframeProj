@@ -48,12 +48,13 @@ public class WarframeProject {
 
 				if (menuChoice == 1) {
 					System.out.println(
-							"Please Enter the Warframe name & type. (Note: Use _ in place of spaces in a name)");
+							"Please Enter the Warframe name (Note: Use _ in place of spaces in a name)");
 					String name = scan.next();
+					System.out.println("Please enter the Warframe type (For dual type, use a slash. Ex: Damage/Stealth");
 					String type = scan.next();
 					Frame newFrame = new Frame(name, type);
 					frames.addElement(newFrame); // put the frame in the Vector
-					System.out.println(newFrame.showInfo()); // Show us your
+					System.out.println("Added: " + newFrame.showInfo()); // Show us your
 																// goodies,
 																// newFrame!
 				}
@@ -66,12 +67,11 @@ public class WarframeProject {
 																		// getting
 																		// somewhere.
 					System.out.println("Showing warframe information:");
+					//Set int to 0 initially, check to see how many elements are in the list, and iterate through each.
 					for (int index = 0; index < totalElements; index++) {
-						System.out.println(frames.get(index).showInfo()); // Show
-																			// dat
-																			// info!
+						System.out.println(frames.get(index).showInfo()); //Show Info!
 					}
-					System.out.println("");
+					System.out.println(""); //linebreak!
 				}
 				if (menuChoice == 3) {
 					System.out.println("Remove Warframe");
@@ -87,8 +87,7 @@ public class WarframeProject {
 							System.out.println(frames.get(index).showInfo()); // Show dat info!
 																				
 						}
-						System.out.println("");// linebreak! Makes for nicer
-												// formatting in the console.
+						System.out.println("");// linebreak! 
 					} else {
 						System.out.println("Not a valid number; Returning to main menu...");
 					}
